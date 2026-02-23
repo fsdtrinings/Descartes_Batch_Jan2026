@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database Connection Settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dectrsdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- Hibernate Properties -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- 
+			
+			create : every time creates Schema 
+			create-drop : create & drop the tables when SessionFactory is closed
+						: during testing
+			update : adds the new updates in tables 
+			             using during development
+			
+			 none or validate
+			           : none :- Db schema will be managed from outside
+			           : validate :- if any mismatch is found -> throws an Exception 
+		-->
+        <property name="show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+
+        <!-- Entity Mapping -->
+        
+       <mapping class="com.abc.orm.entity.Customer"/> 
+       <mapping class="com.abc.orm.entity.Address"/> 
+       <mapping class="com.abc.orm.entity.Profile"/> 
+       <mapping class="com.abc.orm.entity.AppOrder"/> 
+       <mapping class="com.abc.orm.entity.Product"/> 
+       <mapping class="com.abc.orm.entity.Vendor"/> 
+       <mapping class="com.abc.orm.entity.DeliveryPartner"/>
+       <mapping class="com.abc.orm.entity.VendorDeliveryPartnerInfo"/>
+       
+       <mapping class="com.abc.orm.entity.Payment"/>
+       <mapping class="com.abc.orm.entity.UPIPayment"/>
+       <mapping class="com.abc.orm.entity.CardPayment"/>
+       
+       
+        
+       
+       
+       
+       
+       
+      
+        
+        
+    </session-factory>
+</hibernate-configuration>
